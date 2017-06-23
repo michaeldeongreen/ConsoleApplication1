@@ -342,7 +342,7 @@ namespace ConsoleApplication1
         #endregion
 
         #region Asynchronous
-
+        /*
         static void Main(string[] args)
         {
 
@@ -365,9 +365,22 @@ namespace ConsoleApplication1
         {
             Console.WriteLine(string.Format("The name is: {0}.",name));
         }
-
+        */
         #endregion
 
+        #region Date Difference
+        static void Main(string[] args)
+        {
+
+            DateTime currentDate = DateTime.Now;
+            DateTime? endDate = DateTime.Now.AddDays(45);
+
+            var span = (endDate - currentDate);
+            Console.WriteLine(string.Format("Difference is: {0}",span.Value.Days));
+
+            Console.ReadLine();
+        }
+        #endregion
 
     }
 }
