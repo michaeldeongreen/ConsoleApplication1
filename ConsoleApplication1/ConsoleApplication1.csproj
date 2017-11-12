@@ -71,6 +71,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StronglyTypeIEnumerable\Breadcrumb.cs" />
     <Compile Include="StronglyTypeIEnumerable\BreadcrumbSegment.cs" />
+    <Compile Include="StructureMapAddAllTypesOf\DoSomethingService.cs" />
+    <Compile Include="StructureMapAddAllTypesOf\IDoSomethingService.cs" />
+    <Compile Include="StructureMapAddAllTypesOf\IService.cs" />
+    <Compile Include="StructureMapAddAllTypesOf\ThatService.cs" />
+    <Compile Include="StructureMapAddAllTypesOf\ThisService.cs" />
+    <Compile Include="StructureMapAddAllTypesOf\StructureMapAddAllTypesOfIoC.cs" />
     <Compile Include="StructureMapConstructorInjection\Constructor.cs" />
     <Compile Include="StructureMapConstructorInjection\IConstructor.cs" />
     <Compile Include="StructureMapConstructorInjection\StructureMapConstructorInjectionIoC.cs" />

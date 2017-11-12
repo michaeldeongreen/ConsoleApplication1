@@ -3,6 +3,7 @@ using ConsoleApplication1.Asynchronous;
 using ConsoleApplication1.Dynamic;
 using ConsoleApplication1.Events;
 using ConsoleApplication1.StronglyTypeIEnumerable;
+using ConsoleApplication1.StructureMapAddAllTypesOf;
 using ConsoleApplication1.StructureMapConstructorInjection;
 using ConsoleApplication1.StructureMapProfiles;
 using ConsoleApplication1.TemplatePattern;
@@ -369,7 +370,7 @@ namespace ConsoleApplication1
         #endregion
 
         #region Date Difference
-        static void Main(string[] args)
+        /*static void Main(string[] args)
         {
 
             DateTime currentDate = DateTime.Now;
@@ -377,6 +378,34 @@ namespace ConsoleApplication1
 
             var span = (endDate - currentDate);
             Console.WriteLine(string.Format("Difference is: {0}",span.Value.Days));
+
+            Console.ReadLine();
+        }*/
+        #endregion
+
+        #region Decimal Rounding
+        /*
+        static void Main(string[] args)
+        {
+
+            decimal? one = 23.005m;
+            decimal? two = 23.0051m;
+
+            Console.WriteLine(string.Format("{0}, {1}",one.Value.ToString("p"), two.Value.ToString("p")));
+
+            Console.ReadLine();
+        }
+        */
+        #endregion
+        
+        #region StructureMap AllKnownTypesOf
+        static void Main(string[] args)
+        {
+            //Only look at the classes in the StructureMapAddAllTypesOf Folder
+            StructureMapAddAllTypesOfIoC.Init(); //register StructureMap
+            var container = StructureMapAddAllTypesOfIoC.MyContainer; //get the StructureMap container
+            IDoSomethingService doSomethingService = container.GetInstance<IDoSomethingService>(); //grab the DoSomethingService, remember, StructureMap is smart so it will automatically look for a DoSomethingService when a IDoSomethingService is requested as a convention
+            doSomethingService.Do(); //call Do method
 
             Console.ReadLine();
         }
