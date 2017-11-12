@@ -16,7 +16,7 @@ namespace ConsoleApplication1.StructureMapAddAllTypesOf
         {
            IContainer container = new Container(c => {
                 c.Scan(x => {
-                    x.TheCallingAssembly(); //scan the assemblies so StructureMap and register any DLLs it needs
+                    x.TheCallingAssembly(); //scan the assemblies so StructureMap can register any DLLs it needs
                     x.WithDefaultConventions(); //this means that if it sees a IService, it will associated it with Service or ICreditReportParserService, it will look for CreditReportParserService
                     x.AddAllTypesOf<IService>(); //we want to auto register all classes that inherit from IService interface
                 });
