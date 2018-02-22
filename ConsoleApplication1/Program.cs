@@ -2,6 +2,7 @@
 using ConsoleApplication1.Asynchronous;
 using ConsoleApplication1.Dynamic;
 using ConsoleApplication1.Events;
+using ConsoleApplication1.OctopusDeploy;
 using ConsoleApplication1.StronglyTypeIEnumerable;
 using ConsoleApplication1.StructureMapAddAllTypesOf;
 using ConsoleApplication1.StructureMapConstructorInjection;
@@ -399,7 +400,7 @@ namespace ConsoleApplication1
         #endregion
         
         #region StructureMap AllKnownTypesOf
-        static void Main(string[] args)
+        /*static void Main(string[] args)
         {
             //Only look at the classes in the StructureMapAddAllTypesOf Folder
             StructureMapAddAllTypesOfIoC.Init(); //register StructureMap
@@ -408,7 +409,20 @@ namespace ConsoleApplication1
             doSomethingService.Do(); //call Do method
 
             Console.ReadLine();
-        }
+        }*/
+        #endregion
+
+        #region Octopus Deploy
+        static void Main(string[] args)
+        {
+            IList<Movie> movies = new List<Movie>() { new Movie() { Name = "Black Panther", ReleaseDate = DateTime.Now  }, new Movie() { Name = "Batman", ReleaseDate  = DateTime.Now } };
+            FileService fileService = new FileService();
+            for (int i = 1; i <= 5; i++)
+            {
+                string filePath = $@"c:\Temp\{Guid.NewGuid()}.json";
+                fileService.CreateFile(filePath, movies);
+            }
+       }
         #endregion
 
     }
