@@ -10,6 +10,7 @@ using ConsoleApplication1.StructureMapProfiles;
 using ConsoleApplication1.TemplatePattern;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -415,11 +416,13 @@ namespace ConsoleApplication1
         #region Octopus Deploy
         static void Main(string[] args)
         {
+            string path = ConfigurationManager.AppSettings["ConsoleApplication1FilePath"];
+
             IList<Movie> movies = new List<Movie>() { new Movie() { Name = "Black Panther", ReleaseDate = DateTime.Now  }, new Movie() { Name = "Batman", ReleaseDate  = DateTime.Now } };
             FileService fileService = new FileService();
             for (int i = 1; i <= 5; i++)
             {
-                string filePath = $@"c:\Temp\{Guid.NewGuid()}.json";
+                string filePath = $@"{path}\{Guid.NewGuid()}.json";
                 fileService.CreateFile(filePath, movies);
             }
        }
