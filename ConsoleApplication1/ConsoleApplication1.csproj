@@ -73,6 +73,11 @@
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlBulkCopy\ISqlBulkCopyService.cs" />
+    <Compile Include="SqlBulkCopy\ListExtensions.cs" />
+    <Compile Include="SqlBulkCopy\LoanApplication.cs" />
+    <Compile Include="SqlBulkCopy\SqlBulkCopyConfiguration.cs" />
+    <Compile Include="SqlBulkCopy\SqlBulkCopyService.cs" />
     <Compile Include="StronglyTypeIEnumerable\Breadcrumb.cs" />
     <Compile Include="StronglyTypeIEnumerable\BreadcrumbSegment.cs" />
     <Compile Include="Structs\SystemConstants.cs" />

@@ -3,6 +3,7 @@ using ConsoleApplication1.Asynchronous;
 using ConsoleApplication1.Asynchronous2;
 using ConsoleApplication1.Dynamic;
 using ConsoleApplication1.Events;
+using ConsoleApplication1.SqlBulkCopy;
 using ConsoleApplication1.StronglyTypeIEnumerable;
 using ConsoleApplication1.Structs;
 using ConsoleApplication1.StructureMapAddAllTypesOf;
@@ -441,11 +442,35 @@ namespace ConsoleApplication1
         }*/
         #endregion
 
-        #region Abstract Class Testing
-        static async Task Main(string[] args)
+        #region Structs
+        /*static async Task Main(string[] args)
         {
             Console.WriteLine($"Value for Co-Applicant is: {SystemConstants.CreditApplicantTypeId.CoApplicant}");
 
+
+            Console.ReadLine();
+        }*/
+        #endregion
+
+        #region Sql Bulk Copy
+        static async Task Main(string[] args)
+        {
+
+            //Usage
+            IList<LoanApplication> loanApplications = new List<LoanApplication>() { new LoanApplication() { ApplicationId = 1, CreatedDate = DateTime.Now, FirstName = "Michael", LastName = "Green" },
+            new LoanApplication() { ApplicationId = 2, CreatedDate = DateTime.Now, FirstName = "Amy", LastName = "Green" }};
+
+            if (loanApplications != null && loanApplications.Count()  > 0)
+            {
+                SqlBulkCopyConfiguration config = new SqlBulkCopyConfiguration()
+                {
+                    BatchSize = 100,
+                    ConnectionString = "DatabaseConnectionString",
+                    DataTable = ListExtensions.AsDataTable<LoanApplication>(loanApplications),
+                    TableName = "dbo.SomeTableToInsertRecords"
+                };
+                new SqlBulkCopyService().Save(config);
+            }
 
             Console.ReadLine();
         }
