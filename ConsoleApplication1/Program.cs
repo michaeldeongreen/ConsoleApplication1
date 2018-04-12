@@ -1,8 +1,10 @@
 ﻿using ConsoleApplication1.AbstractFactory;
 using ConsoleApplication1.Asynchronous;
+using ConsoleApplication1.Asynchronous2;
 using ConsoleApplication1.Dynamic;
 using ConsoleApplication1.Events;
 using ConsoleApplication1.StronglyTypeIEnumerable;
+using ConsoleApplication1.Structs;
 using ConsoleApplication1.StructureMapAddAllTypesOf;
 using ConsoleApplication1.StructureMapConstructorInjection;
 using ConsoleApplication1.StructureMapProfiles;
@@ -397,15 +399,53 @@ namespace ConsoleApplication1
         }
         */
         #endregion
-        
+
         #region StructureMap AllKnownTypesOf
-        static void Main(string[] args)
+        /*static void Main(string[] args)
         {
             //Only look at the classes in the StructureMapAddAllTypesOf Folder
             StructureMapAddAllTypesOfIoC.Init(); //register StructureMap
             var container = StructureMapAddAllTypesOfIoC.MyContainer; //get the StructureMap container
             IDoSomethingService doSomethingService = container.GetInstance<IDoSomethingService>(); //grab the DoSomethingService, remember, StructureMap is smart so it will automatically look for a DoSomethingService when a IDoSomethingService is requested as a convention
             doSomethingService.Do(); //call Do method
+
+            Console.ReadLine();
+        }*/
+        #endregion
+
+        #region Asynchronous2
+        /*static async Task Main(string[] args)
+        {
+            Console.WriteLine($"Current Thread: {System.Threading.Thread.CurrentThread.ManagedThreadId}");
+            AsynchronousService2 service = new AsynchronousService2();
+
+            var task1 = await service.CalculateTaskRunAsync(1, 8000000);
+            var task2 = await service.CalculateAsync(1, 8000000);
+            
+
+            Console.ReadLine();
+        }*/
+        #endregion
+
+        #region Abstract Class Testing
+        /*static async Task Main(string[] args)
+        {
+            Console.WriteLine($"Current Thread: {System.Threading.Thread.CurrentThread.ManagedThreadId}");
+            AsynchronousService2 service = new AsynchronousService2();
+
+            var task1 = await service.CalculateTaskRunAsync(1, 8000000);
+            var task2 = await service.CalculateAsync(1, 8000000);
+
+
+            Console.ReadLine();
+        }*/
+        #endregion
+
+        #region Abstract Class Testing
+        static async Task Main(string[] args)
+        {
+            Console.WriteLine($"Value for Co-Applicant is: {SystemConstants.CreditApplicantTypeId.CoApplicant}");
+
 
             Console.ReadLine();
         }
