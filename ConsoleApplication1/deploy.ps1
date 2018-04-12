@@ -1,0 +1,1 @@
+﻿Start-Process -Wait bin\Release\ConsoleApplication1.exe

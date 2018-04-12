@@ -1,0 +1,1 @@
+[{"Name":"Black Panther","ReleaseDate":"2018-02-21T19:46:40.1875156-06:00"},{"Name":"Batman","ReleaseDate":"2018-02-21T19:46:40.7265002-06:00"}]
