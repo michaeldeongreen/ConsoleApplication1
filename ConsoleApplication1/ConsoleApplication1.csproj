@@ -11,12 +11,9 @@
     <AssemblyName>ConsoleApplication1</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-<<<<<<< HEAD
     <TargetFrameworkProfile />
-=======
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
->>>>>>> 0f124f4bfeff7ef718ec161fcd64567b96c1e73c
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
