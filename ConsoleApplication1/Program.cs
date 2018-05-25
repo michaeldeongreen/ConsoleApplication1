@@ -509,6 +509,7 @@ namespace ConsoleApplication1
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World Hahahaha!");
+			Console.WriteLine("Hello World Hahahaha10101010!");
 
             Console.ReadLine();
         }
