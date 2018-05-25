@@ -479,7 +479,7 @@ namespace ConsoleApplication1
         #endregion
 
         #region Octopus Deploy
-        static void Main(string[] args)
+        /*static void Main(string[] args)
         {
             string path = ConfigurationManager.AppSettings["ConsoleApplication1FilePath"];
 
@@ -493,7 +493,16 @@ namespace ConsoleApplication1
                 string filePath = $@"{path}\{Guid.NewGuid()}.json";
                 fileService.CreateFile(filePath, movies);
             }
-       }
+       }*/
+        #endregion
+
+        #region Testing 123
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+
+            Console.ReadLine();
+        }
         #endregion
 
     }
