@@ -497,9 +497,18 @@ namespace ConsoleApplication1
         #endregion
 
         #region Testing 123
-        static void Main(string[] args)
+        /*static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+            Console.ReadLine();
+        }*/
+        #endregion
+
+        #region Testing 12345
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World Hahahaha!");
 
             Console.ReadLine();
         }
