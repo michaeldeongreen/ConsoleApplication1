@@ -505,16 +505,34 @@ namespace ConsoleApplication1
         }*/
         #endregion
 
-        #region Testing 12345
+        #region Reverse Array
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World Hahahaha!");
-			Console.WriteLine("Hello World Hahahaha10101010!");
-			Console.WriteLine("Hello World Hahahaha99999!");
+            int[] intArray = new int[11];
+
+            for (int i = 1; i < intArray.Length + 1; i++)
+            {
+                intArray[i - 1] = i;
+                Console.WriteLine($"Original Value is: {i.ToString()}");
+            }
+
+            Console.WriteLine("Reversing Array.....");
+
+            int length = (intArray.Length / 2) + 1;
+
+            for (int i = 1; i < length; i++)
+            {
+                intArray[i - 1] = intArray[intArray.Length - i];
+                intArray[intArray.Length - i] = i;
+            }
+
+            for (int i = 1; i < intArray.Length + 1; i++)
+            {
+                Console.WriteLine($"Reversed Value is: {intArray[i - 1].ToString()}");
+            }
 
             Console.ReadLine();
         }
         #endregion
-
     }
 }
