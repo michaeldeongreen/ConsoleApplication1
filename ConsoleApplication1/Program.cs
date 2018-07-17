@@ -508,13 +508,14 @@ namespace ConsoleApplication1
         #region Reverse Array
         static void Main(string[] args)
         {
-            int[] intArray = new int[11];
+            int[] intArray = new int[] {8, 5, 9, 7, 3, 15 };
 
-            for (int i = 1; i < intArray.Length + 1; i++)
+            /*for (int i = 1; i < intArray.Length + 1; i++)
             {
                 intArray[i - 1] = i;
                 Console.WriteLine($"Original Value is: {i.ToString()}");
-            }
+            }*/
+
 
             Console.WriteLine("Reversing Array.....");
 
@@ -522,8 +523,9 @@ namespace ConsoleApplication1
 
             for (int i = 1; i < length; i++)
             {
+                int placeHolder = intArray[i - 1];
                 intArray[i - 1] = intArray[intArray.Length - i];
-                intArray[intArray.Length - i] = i;
+                intArray[intArray.Length - i] = placeHolder;
             }
 
             for (int i = 1; i < intArray.Length + 1; i++)
