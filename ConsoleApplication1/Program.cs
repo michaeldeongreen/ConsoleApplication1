@@ -496,25 +496,31 @@ namespace ConsoleApplication1
        }*/
         #endregion
 
-        #region Testing 123
+        #region Reverse Array
         /*static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
 
-            Console.ReadLine();
-        }*/
-        #endregion
+            try
+            {
+                var h = 1;
+                throw new Exception();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception();
+            }
+            finally
+            {
+                var t = 2;
+            }
 
-        #region Reverse Array
-        static void Main(string[] args)
-        {
             int[] intArray = new int[] {8, 5, 9, 7, 3, 15 };
 
-            /*for (int i = 1; i < intArray.Length + 1; i++)
-            {
-                intArray[i - 1] = i;
-                Console.WriteLine($"Original Value is: {i.ToString()}");
-            }*/
+            //for (int i = 1; i < intArray.Length + 1; i++)
+            //{
+              //  intArray[i - 1] = i;
+                //Console.WriteLine($"Original Value is: {i.ToString()}");
+            //}
 
 
             Console.WriteLine("Reversing Array.....");
@@ -531,6 +537,31 @@ namespace ConsoleApplication1
             for (int i = 1; i < intArray.Length + 1; i++)
             {
                 Console.WriteLine($"Reversed Value is: {intArray[i - 1].ToString()}");
+            }
+
+            Console.ReadLine();
+        }*/
+        #endregion
+
+        #region Print Odd Number Via Linq
+        static void Main(string[] args)
+        {
+
+            int[] numbersArray = new int[100];
+            const int length = 100;
+
+            for (int i = 1; i < length; i++)
+            {
+                numbersArray[i] = i;
+            }
+
+            var query = from n in numbersArray
+                        where n % 2 > 0
+                        select n;
+
+            foreach (var n in query)
+            {
+                Console.WriteLine(n);
             }
 
             Console.ReadLine();
